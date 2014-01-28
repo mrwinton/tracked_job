@@ -2,8 +2,6 @@ PATH
   remote: .
   specs:
     tracked_job (0.0.1)
-      delayed_job (= 4.0.0)
-      delayed_job_active_record (= 4.0.0)
       rails (~> 4.0.0)
 
 GEM
@@ -104,6 +102,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  delayed_job (= 4.0.0)
+  delayed_job_active_record (= 4.0.0)
   rspec-rails
   sqlite3
   tracked_job!

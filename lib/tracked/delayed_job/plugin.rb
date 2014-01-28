@@ -1,5 +1,3 @@
-require 'delayed_job'
-
 module Tracked
   module DelayedJob
     class Plugin < Delayed::Plugin

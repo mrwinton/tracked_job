@@ -1,8 +1,9 @@
 ENV['RAILS_ENV'] ||= 'test'
+require 'delayed_job'
+
 require File.expand_path("../dummy/config/environment.rb",  __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
-require 'delayed_job'
 
 Rails.backtrace_cleaner.remove_silencers!
 # Load support files

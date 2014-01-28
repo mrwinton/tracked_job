@@ -1,5 +1,3 @@
-require 'delayed_job'
-
 module Delayed
   class TrackedDelayProxy < Delayed::DelayProxy
     def method_missing(method, *args)

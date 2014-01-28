@@ -5,7 +5,6 @@ module Tracked
     serialize :data
 
     has_one :user
-    #attr_accessible :job_id, :uuid, :started_at, :success, :data, :user
 
     def self.generate(job_id, user=nil)
       uuid = SecureRandom.uuid
