@@ -5,10 +5,11 @@ require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "sprockets/railtie"
+require "delayed_job"
+require "tracked"
 # require "rails/test_unit/railtie"
 
 Bundler.require(*Rails.groups)
-require "tracked"
 
 module Dummy
   class Application < Rails::Application
