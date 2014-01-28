@@ -1,12 +1,12 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "tracked/version"
+require "tracked_job/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "tracked_job"
-  s.version     = Tracked::VERSION
+  s.version     = TrackedJob::VERSION
   s.authors     = ["Ludvig Dickman", "Jenny Olsson", "Avidity"]
   s.email       = ["code@avidity.se"]
   s.homepage    = "http://github.com/avidity/tracked_job"

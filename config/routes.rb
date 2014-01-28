@@ -1,2 +1,2 @@
-Tracked::Engine.routes.draw do
+TrackedJob::Engine.routes.draw do
 end

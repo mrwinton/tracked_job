@@ -6,7 +6,7 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "sprockets/railtie"
 require "delayed_job"
-require "tracked"
+require "tracked_job"
 # require "rails/test_unit/railtie"
 
 Bundler.require(*Rails.groups)

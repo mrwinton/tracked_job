@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
 
-  mount Tracked::Engine => "/tracked"
+  mount TrackedJob::Engine => "/tracked"
 end
