@@ -5,13 +5,14 @@ require "tracked/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "tracked"
+  s.name        = "tracked_job"
   s.version     = Tracked::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Tracked."
-  s.description = "TODO: Description of Tracked."
+  s.authors     = ["Ludvig Dickman", "Jenny Olsson", "Avidity"]
+  s.email       = ["code@avidity.se"]
+  s.homepage    = "http://github.com/avidity/tracked_job"
+  s.summary     = "Track background jobs"
+  s.description = "Adds the ability to track backgrounds jobs. Currently only for delayed_job."
+  s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
