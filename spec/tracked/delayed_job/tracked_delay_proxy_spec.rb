@@ -17,7 +17,7 @@ describe Tracked::DelayedJob::Plugin do
 
   it "should return the created tracked_job uuid" do
     SecureRandom.stub(:uuid) { "uuid" }
-
-    expect(stub_object.tracked_delay.calculate).to eq "uuid"
+    result = stub_object.tracked_delay.calculate
+    expect(result).to eq "uuid"
   end
 end
