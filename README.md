@@ -10,7 +10,7 @@ Currently supports integration with [delayed_job](https://github.com/collectivei
 
 Installation
 ============
-tracked_job 0.0.1 only supports Rails 4.0+.
+tracked_job 0.0.2 only supports Rails 4.0+.
 
 Add `tracked_job` to your `Gemfile`.
 
