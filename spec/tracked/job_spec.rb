@@ -49,4 +49,30 @@ describe Tracked::Job do
     expect(tracked_job.result).to eq "error"
   end
 
+  context "#status" do
+    it "should return :created when started_at is not set" do
+      tracked_job = Tracked::Job.generate(job_id)
+      expect(tracked_job.status).to eq :created
+    end
+
+    it "should return :started when started_at is set" do
+      tracked_job = Tracked::Job.generate(job_id)
+      tracked_job.start!
+      expect(tracked_job.status).to eq :started
+    end
+
+    it "should return :success when success is true" do
+      tracked_job = Tracked::Job.generate(job_id)
+      tracked_job.start!
+      tracked_job.succeed!("result")
+      expect(tracked_job.status).to eq :success
+    end
+
+    it "should return :failed when success is false" do
+      tracked_job = Tracked::Job.generate(job_id)
+      tracked_job.start!
+      tracked_job.fail!("error")
+      expect(tracked_job.status).to eq :failed
+    end
+  end
 end

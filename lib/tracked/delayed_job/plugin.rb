@@ -28,4 +28,3 @@ module Tracked
     end
   end
 end
-

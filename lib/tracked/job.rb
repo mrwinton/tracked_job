@@ -20,5 +20,12 @@ module Tracked
     def fail!(result)
       self.update_attributes!(success: false, result: result)
     end
+
+    def status
+      return :created if started_at.nil?
+      return :started if success.nil?
+      return :success if success
+      :failed
+    end
   end
 end
