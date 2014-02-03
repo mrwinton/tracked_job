@@ -7,7 +7,7 @@ module Tracked
           begin
             result = super
           rescue Exception => exception
-            @tracked_job.fail!(exception)
+            @tracked_job.fail!(exception.message)
             raise
           end
           @tracked_job.succeed!(result)
