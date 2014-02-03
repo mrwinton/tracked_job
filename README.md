@@ -20,6 +20,14 @@ gem 'tracked_job'
 
 Run `bundle install` to install.
 
+
+The Active Record backend requires a tracked_jobs table. You can create that table by
+running the following command:
+
+    rake tracked_job:install:migrations
+    rake db:migrate
+
+
 Add the Tracked::DelayedJob::Plugin to hook into delayed jobs:
 
 ```ruby
