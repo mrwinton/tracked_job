@@ -3,7 +3,7 @@ module Delayed
     def method_missing(method, *args)
       job = super
       tracked_job = ::Tracked::Job.generate(job.id)
-      tracked_job.uuid
+      tracked_job
     end
   end
 

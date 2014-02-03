@@ -15,9 +15,9 @@ describe Tracked::DelayedJob::Plugin do
     }.to change { Tracked::Job.count }.from(0).to(1)
   end
 
-  it "should return the created tracked_job uuid" do
+  it "should return the created tracked_job" do
     SecureRandom.stub(:uuid) { "uuid" }
-    result = stub_object.tracked_delay.calculate
-    expect(result).to eq "uuid"
+    tracked_job = stub_object.tracked_delay.calculate
+    expect(tracked_job.uuid).to eq "uuid"
   end
 end
