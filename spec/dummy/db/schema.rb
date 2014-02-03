@@ -30,11 +30,10 @@ ActiveRecord::Schema.define(version: 20140128152843) do
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
 
   create_table "tracked_jobs", force: true do |t|
-    t.string   "uuid",       null: false
-    t.integer  "user_id"
-    t.integer  "job_id",     null: false
+    t.string   "uuid",       limit: 36, null: false
+    t.integer  "job_id",                null: false
     t.boolean  "success"
-    t.text     "data"
+    t.text     "result"
     t.datetime "started_at"
     t.datetime "created_at"
     t.datetime "updated_at"

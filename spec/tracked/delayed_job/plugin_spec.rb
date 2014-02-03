@@ -27,7 +27,7 @@ describe Tracked::DelayedJob::Plugin do
       Delayed::Worker.new.work_off
       tracked_job.reload
     }.to change { tracked_job.success }.to(true)
-    expect(tracked_job.data).to eq "result"
+    expect(tracked_job.result).to eq "result"
   end
 
   it "should fail the tracked_job if job has an error" do
@@ -40,6 +40,6 @@ describe Tracked::DelayedJob::Plugin do
       tracked_job.reload
     }.to change { tracked_job.success }.to(false)
 
-    expect(tracked_job.data).to be_a TypeError
+    expect(tracked_job.result).to be_a TypeError
   end
 end
