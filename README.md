@@ -37,7 +37,7 @@ Delayed::Worker.plugins << Tracked::DelayedJob::Plugin
 
 Tracking Queued Jobs
 ============
-Call `.tracked_delay.method(params)` on any object and it will track the job that is beign processed in the background.
+Call `.tracked_delay.method(params)` on any object and it will track the job that is being processed in the background.
 
 ```ruby
 # without delayed_job
