@@ -2,8 +2,6 @@ module Tracked
   class Job < ActiveRecord::Base
     self.table_name = "tracked_jobs"
 
-    serialize :result
-
     def self.generate(job_id)
       uuid = SecureRandom.uuid
       self.create!(job_id: job_id, uuid: uuid)

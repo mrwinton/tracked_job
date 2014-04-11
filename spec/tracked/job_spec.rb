@@ -36,10 +36,10 @@ describe Tracked::Job do
     object = Tracked::Job.generate(10)
 
     tracked_job = Tracked::Job.generate(job_id)
-    tracked_job.succeed!(object)
+    tracked_job.succeed!(object.to_json)
     tracked_job.reload
     expect(tracked_job.success).to be_true
-    expect(tracked_job.result).to eq object
+    expect(tracked_job.result).to eq object.to_json
   end
 
   it "should be possible to fail" do
