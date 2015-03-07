@@ -4,7 +4,7 @@ describe Tracked::DelayedJob::Plugin do
 
   before do
     mock_model('MockModel')
-    MockModel.any_instance.stub(:calculate) { "result" }
+    allow_any_instance_of(MockModel).to receive(:calculate).and_return("result")
   end
 
   let(:stub_object) { MockModel.new }
@@ -31,7 +31,7 @@ describe Tracked::DelayedJob::Plugin do
   end
 
   it "should fail the tracked_job if job has an error" do
-    MockModel.any_instance.stub(:calculate) { raise TypeError.new("error") }
+    allow_any_instance_of(MockModel).to receive(:calculate) { raise TypeError.new("error") }
     stub_object.tracked_delay.calculate
     tracked_job = Tracked::Job.first
 

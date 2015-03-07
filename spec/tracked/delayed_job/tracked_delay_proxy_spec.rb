@@ -4,7 +4,7 @@ describe Tracked::DelayedJob::Plugin do
 
   before do
     mock_model('MockModel')
-    MockModel.any_instance.stub(:calculate) { "result" }
+    allow_any_instance_of(MockModel).to receive(:calculate).and_return("result")
   end
 
   let(:stub_object) { MockModel.new }
@@ -16,7 +16,7 @@ describe Tracked::DelayedJob::Plugin do
   end
 
   it "should return the created tracked_job" do
-    SecureRandom.stub(:uuid) { "uuid" }
+    allow(SecureRandom).to receive(:uuid).and_return("uuid")
     tracked_job = stub_object.tracked_delay.calculate
     expect(tracked_job.uuid).to eq "uuid"
   end

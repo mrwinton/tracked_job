@@ -3,7 +3,7 @@ require 'delayed_job'
 
 require File.expand_path("../dummy/config/environment.rb",  __FILE__)
 require 'rspec/rails'
-require 'rspec/autorun'
+require 'rspec/active_model/mocks'
 
 Rails.backtrace_cleaner.remove_silencers!
 # Load support files
