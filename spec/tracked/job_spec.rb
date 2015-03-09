@@ -6,29 +6,29 @@ describe Tracked::Job do
 
   it "should be able to create" do
     tracked_job = Tracked::Job.generate(job_id)
-    expect(tracked_job).not_to be_nil
-    expect(tracked_job.id).not_to be_nil
-    expect(tracked_job.uuid).not_to be_nil
+    expect(tracked_job).not_to be nil
+    expect(tracked_job.id).not_to be nil
+    expect(tracked_job.uuid).not_to be nil
   end
 
   it "should be able to create" do
     tracked_job = Tracked::Job.generate(job_id)
-    expect(tracked_job).not_to be_nil
-    expect(tracked_job.id).not_to be_nil
-    expect(tracked_job.uuid).not_to be_nil
+    expect(tracked_job).not_to be nil
+    expect(tracked_job.id).not_to be nil
+    expect(tracked_job.uuid).not_to be nil
   end
 
   it "should be possible to start" do
     tracked_job = Tracked::Job.generate(job_id)
     tracked_job.start!
-    expect(tracked_job.started_at).not_to be_nil
+    expect(tracked_job.started_at).not_to be nil
   end
 
   it "should be possible to succeed" do
     tracked_job = Tracked::Job.generate(job_id)
     tracked_job.succeed!("something")
     tracked_job.reload
-    expect(tracked_job.success).to be_true
+    expect(tracked_job.success).to be true
     expect(tracked_job.result).to eq "something"
   end
 
@@ -38,14 +38,14 @@ describe Tracked::Job do
     tracked_job = Tracked::Job.generate(job_id)
     tracked_job.succeed!(object.to_json)
     tracked_job.reload
-    expect(tracked_job.success).to be_true
+    expect(tracked_job.success).to be true
     expect(tracked_job.result).to eq object.to_json
   end
 
   it "should be possible to fail" do
     tracked_job = Tracked::Job.generate(job_id)
     tracked_job.fail!("error")
-    expect(tracked_job.success).not_to be_true
+    expect(tracked_job.success).not_to be true
     expect(tracked_job.result).to eq "error"
   end
 
