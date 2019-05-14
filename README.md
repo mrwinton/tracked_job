@@ -35,6 +35,14 @@ Add the Tracked::DelayedJob::Plugin to hook into delayed jobs:
 Delayed::Worker.plugins << Tracked::DelayedJob::Plugin
 ```
 
+Testing
+============
+```sh
+bundle install
+bundle exec db:test:prepare
+bundle exec rspec
+```
+
 Tracking Queued Jobs
 ============
 Call `.tracked_delay.method(params)` on any object and it will track the job that is being processed in the background.
